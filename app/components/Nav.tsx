@@ -61,7 +61,17 @@ export default function Nav() {
       </div>
 
       {isOpen && (
-        <div className="absolute top-0 left-0 h-screen w-screen z-30 bg-[#2CA58D]"></div>
+        <div className="absolute top-0 left-0 h-screen w-screen flex flex-col gap-8 justify-end items-start px-[20px] md:px-[50px] pb-[50px] z-30 bg-[#2CA58D]">
+          {navLinks.map((link) => (
+            <Link
+              key={link.id}
+              href={link.url}
+              className="text-[2rem] font-light"
+            >
+              {link.title}
+            </Link>
+          ))}
+        </div>
       )}
     </nav>
   );
